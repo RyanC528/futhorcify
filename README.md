@@ -6,12 +6,47 @@ So parts of this project will be listed in phases, probably won't do all parts b
 
 REFERENCE INFO
 
+GLYPH CHART,
+
+English Sound - Futhorc letter - Futhor Glyph - Unicode
+A                Ac               
+B
+C
+D
+E
+F
+G
+H
+I
+J
+K
+L
+M
+N
+O
+P
+Q
+R
+S
+T
+U
+V
+W
+X
+Y
+Z
+Th
+Sh
+Ch
+NG
+
 PHASES
 
 Phase 1 - basic command line converter
 
   Logic should be simple since FUTHORC's 30 characters can be easily translated to the 26 English letters complication should simple
   Only pain in the ass would be TH, CH, SH, NG
+  Wait no, C is a whore
 
   Main -
 
