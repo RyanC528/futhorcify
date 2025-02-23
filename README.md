@@ -10,35 +10,35 @@ GLYPH CHART,
 
 English Sound - Futhorc letter - Futhor Glyph - Unicode
 A                Ac               
-B
-C
-D
-E
-F
-G
-H
-I
-J
-K
-L
-M
-N
-O
-P
-Q
-R
-S
-T
-U
-V
-W
-X
-Y
-Z
-Th
-Sh
-Ch
-NG
+B                Berc
+C                Cen
+D                Daeg
+E                Eh
+F                Feh
+G                Geofu
+H                Haegil
+I                Is
+J                Geal
+K                Calc
+L                Lagu
+M                Mon
+N                Naed
+O                Os
+P                Peord
+Q                Cweorth
+R                Rada
+S                Sygil
+T                Ti
+U                Ur
+V                Feh
+W                Wyn
+X                Icls
+Y                Yr
+Z                Sygil
+Th               Thorn
+Sh               Sygil 
+Ch               Cen
+NG               Ing
 
 PHASES
 
