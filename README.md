@@ -9,44 +9,47 @@ REFERENCE INFO
 GLYPH CHART,
 
 English Sound - Futhorc letter - Futhor Glyph - Unicode
-A                Ac               
-B                Berc
-C                Cen
-D                Daeg
-E                Eh
-F                Feh
-G                Geofu
-H                Haegil
-I                Is
-J                Geal
-K                Calc
-L                Lagu
-M                Mon
-N                Naed
-O                Os
-P                Peord
-Q                Cweorth
-R                Rada
-S                Sygil
-T                Ti
-U                Ur
-V                Feh
-W                Wyn
-X                Icls
-Y                Yr
-Z                Sygil
-Th               Thorn
-Sh               Sygil 
-Ch               Cen
-NG               Ing
+A                Ac               ᚪ  
+B                Berc             ᛒ
+C                Cen              ᚳ
+D                Daeg             ᛞ
+E                Eh               ᛖ
+F                Feh              ᚠ
+G                Geofu            ᚷ
+H                Haegil           ᚻ
+I                Is               ᛁ
+J                Geal             ᛡ 
+K                Calc             ᛣ
+L                Lagu             ᛚ
+M                Mon              ᛗ
+N                Naed             ᚾ
+O                Os               ᚩ
+P                Peord            ᛈ
+Q                Cweorth          ᛢ
+R                Rada             ᚱ
+S                Sygil            ᛋ
+T                Ti               ᛏ
+U                Ur               ᚢ
+V                Feh              ᚠ
+W                Wyn              ᚹ
+X                Icls             ᛉ
+Y                Yr               ᚣ
+Z                Sygil            ᛋ
+Th               Thorn            ᚦ
+Sh               N/A
+Ch               N/A
+NG               Ing              ᛝ
 
 PHASES
 
 Phase 1 - basic command line converter
 
   Logic should be simple since FUTHORC's 30 characters can be easily translated to the 26 English letters complication should simple
-  Only pain in the ass would be TH, CH, SH, NG
+  Only pain in the ass would be TH, NG
   Wait no, C is a whore
+  Figured out C, but there is no z or v, use unused vowel symbols for phase 1
+  V ->  ᛟ
+  Z ->  ᚫ
 
   Main -
 
