@@ -1,45 +1,53 @@
 chart : dict = {
-    "a" : "a",
-    "b" : "b",
-    "c" : "c",
-    "d" : "d",
-    "e" : "e",
-    "f" : "f",
-    "g" : "g",
-    "h" : "h",
-    "i" : "i",
-    "j" : "j",
-    "k" : "k",
-    "l" : "l",
-    "m" : "m",
-    "n" : "n",
-    "o" : "o",
-    "p" : "p",
-    "q" : "q",
-    "r" : "r",
-    "s" : "s",
-    "t" : "t",
-    "u" : "u",
-    "v" : "v",
-    "w" : "w",
-    "x" : "x",
-    "y" : "y",
-    "z" : "z",
-    "th": "th",
-    "ng": "ng"
+    "a" : "ᚪ",
+    "b" : "ᛒ",
+    "c" : "ᚳ",
+    "d" : "ᛞ",
+    "e" : "ᛖ",
+    "f" : "ᚠ",
+    "g" : "ᚷ",
+    "h" : "ᚻ",
+    "i" : "ᛁ",
+    "j" : "ᛡ",
+    "k" : "ᛣ",
+    "l" : "ᛚ",
+    "m" : "ᛗ",
+    "n" : "ᚾ",
+    "o" : "ᚩ",
+    "p" : "ᛈ",
+    "q" : "ᛢ",
+    "r" : "ᚱ",
+    "s" : "ᛋ",
+    "t" : "ᛏ",
+    "u" : "ᚢ",
+    "v" : "ᚠ",
+    "w" : "ᚹ",
+    "x" : "ᛉ",
+    "y" : "ᚣ",
+    "z" : "ᛋ",
+    "th": "ᚦ",
+    "ng": "ᛝ",
+    " " : " "
 }
 
-instr : str = ""
+instr : str = "running"
 outstr : str = ""
 
 instr = instr.lower()
+i : int = 0
 
-for i in range(0 , len(instr) - 1):
+while i < len(instr):
     if (instr[i] == "t") and (instr[i + 1] == "h"):
         outstr = outstr + chart["th"]
+        i = i + 1
 
     elif (instr[i] == "n") and (instr[i + 1] == "g"):
         outstr = outstr + chart["ng"]
+        i = i + 1
 
     else:
         outstr = outstr + chart[instr[i]]
+
+    i = i + 1
+
+print(outstr)
