@@ -1,11 +1,45 @@
 class Translator():
     def __init__(self):
         self.hash_dec()
-        self.translate("Testing")
+        self.cli()
 
 
     def cli(self) -> None:
-        pass
+
+        intro : str = '''Welcome this is the basic cli for the Futhorcify project, which allows for quick translations from Egnlish text into Runes
+            To use, enter one of 3 commands.
+            E -> Exit
+            T -> Launch translator
+            H -> Help to restate intro
+        '''
+
+        print(intro)
+        
+        while True:
+            command: chr = input()
+
+            if command == "E":
+                print("Thank you for your time")
+                break
+
+            elif command == "T":
+                print("Enter the word you wish translate")
+
+                instr: str = input()
+
+                if self.valid_str(instr):
+                    self.translate(instr)
+
+                else:
+                    print("Error invalid characters")
+
+            elif command == "H":
+                print(intro)
+
+
+            else:
+                print("ERROR")
+                print("This is a basic program, please only use listed commands. Anything else will throw an error")
 
     def translate(self, instr : str) -> None:
         outstr : str = ""
@@ -28,6 +62,10 @@ class Translator():
             i = i + 1
 
         print(outstr)
+
+    def valid_str(self, instr: str) -> bool: 
+        return instr.isalpha()
+
 
     def hash_dec(self) -> None: #completely unneeded, I just wanted to put the dict dec out of the way.
         self.chart :dict = {
