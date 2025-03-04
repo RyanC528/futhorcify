@@ -10,6 +10,7 @@ class Translator():
             To use, enter one of 3 commands.
             E -> Exit
             T -> Launch translator
+            F -> Translate File
             H -> Help to restate intro
         '''
 
@@ -28,7 +29,7 @@ class Translator():
                 instr: str = input()
 
                 if self.valid_str(instr):
-                    self.translate(instr)
+                    print(self.translate(instr))
 
                 else:
                     print("Error invalid characters")
@@ -36,12 +37,15 @@ class Translator():
             elif command == "H":
                 print(intro)
 
+            elif command == "F":
+                self.file_bs()
+                print("File has been translated")
 
             else:
                 print("ERROR")
                 print("This is a basic program, please only use listed commands. Anything else will throw an error")
 
-    def translate(self, instr : str) -> None:
+    def translate(self, instr : str) -> str:
         outstr : str = ""
 
         instr = instr.lower()
@@ -61,10 +65,20 @@ class Translator():
 
             i = i + 1
 
-        print(outstr)
+        return outstr
 
     def valid_str(self, instr: str) -> bool: 
         return instr.isalpha()
+    
+    def file_bs(self) -> None:
+        f_in = open("/home/ryanc/futhorcify/text_files/input.txt","rt")
+        f_out = open("/home/ryanc/futhorcify/text_files/output.txt","wt")
+
+        for line in f_in:
+            f_out.write(self.translate(line))
+
+        f_in.close()
+        f_out.close()
 
 
     def hash_dec(self) -> None: #completely unneeded, I just wanted to put the dict dec out of the way.
@@ -97,5 +111,6 @@ class Translator():
     "z" : "ᛋ",
     "th": "ᚦ",
     "ng": "ᛝ",
-    " " : " "
+    " " : " ",
+    "\n": "\n"
 }
