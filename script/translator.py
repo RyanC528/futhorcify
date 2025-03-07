@@ -1,4 +1,4 @@
-class Translator():
+class Translator:
     def __init__(self):
         self.hash_dec()
         self.cli()

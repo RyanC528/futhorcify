@@ -72,11 +72,17 @@ Phase 1 - basic command line converter
 
       output output text
 
-Phase 2 - file converter
+Phase 2 - file converter - I made this without updating updating read me
+
+    everything stored in text_files, with in and output files
 
 Phase 3 - Add GUI
 
-Phase 4 - Add intermeddary to make output phonetic
+  thought this was later, starting to draw things
+
+Phase 4 - Add intermeddary to make output phonetic 
+
+  using library called eng-to-ipa. Returns CMU Pronuncations
 
 Phase 5 - Webapp this shit
 
