@@ -56,12 +56,25 @@ class Translator:
         i: int = 0
 
         while i < len(instr):
-            if (instr[i] == "t") and (instr[i + 1] == "h"):
-                outstr = outstr + self.chart["th"]
+            # root out dipthongs and
+            if (instr[i] == "a") and (instr[i + 1] == "ʊ"):
+                outstr = outstr + self.chart["aʊ"]
                 i = i + 1
 
-            elif (instr[i] == "n") and (instr[i + 1] == "g"):
-                outstr = outstr + self.chart["ng"]
+            elif (instr[i] == "a") and (instr[i + 1] == "ɪ"):
+                outstr = outstr + self.chart["aɪ"]
+                i = i + 1
+
+            elif (instr[i] == "e") and (instr[i + 1] == "ɪ"):
+                outstr = outstr + self.chart["eɪ"]
+                i = i + 1
+
+            elif (instr[i] == "o") and (instr[i + 1] == "ʊ"):
+                outstr = outstr + self.chart["oʊ"]
+                i = i + 1
+
+            elif (instr[i] == "ɔ") and (instr[i + 1] == "ɪ"):
+                outstr = outstr + self.chart["ɔɪ"]
                 i = i + 1
 
             else:
@@ -82,7 +95,8 @@ class Translator:
         f_out = open("/home/ryanc/futhorcify/text_files/output.txt", "wt")
 
         for line in f_in:
-            f_out.write(self.translate(line))
+            f_out.write(self.translate(p.convert(line)))
+            f_out.write("\n")
 
         f_in.close()
         f_out.close()
@@ -133,4 +147,8 @@ class Translator:
             "ʒ": "ᛉᚻ",
             " ": " ",
             "\n": "\n",
+            ",": ",",
+            ".": ".",
+            "ˈ": "",
+            "ˌ": "",
         }
