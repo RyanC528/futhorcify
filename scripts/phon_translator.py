@@ -31,7 +31,7 @@ class Translator:
                 instr: str = input()
 
                 if self.valid_str(instr):
-                    print(self.translate(instr))
+                    print(self.translate(self.to_ipa(instr)))
 
                 else:
                     print("Error invalid characters")
@@ -54,31 +54,43 @@ class Translator:
 
         instr = instr.lower()
         i: int = 0
+        lib_error: bool = False
 
         while i < len(instr):
             # root out dipthongs and
-            if (instr[i] == "a") and (instr[i + 1] == "ʊ"):
-                outstr = outstr + self.chart["aʊ"]
-                i = i + 1
 
-            elif (instr[i] == "a") and (instr[i + 1] == "ɪ"):
-                outstr = outstr + self.chart["aɪ"]
-                i = i + 1
+            if instr[i] == "*":
+                lib_error = True
 
-            elif (instr[i] == "e") and (instr[i + 1] == "ɪ"):
-                outstr = outstr + self.chart["eɪ"]
-                i = i + 1
+            if instr[i] == " ":
+                lib_error = False
 
-            elif (instr[i] == "o") and (instr[i + 1] == "ʊ"):
-                outstr = outstr + self.chart["oʊ"]
-                i = i + 1
+            if lib_error == True:
+                outstr = outstr + self.e_chart[instr]
 
-            elif (instr[i] == "ɔ") and (instr[i + 1] == "ɪ"):
-                outstr = outstr + self.chart["ɔɪ"]
-                i = i + 1
+            elif lib_error == False:
+                if (instr[i] == "a") and (instr[i + 1] == "ʊ"):
+                    outstr = outstr + self.p_chart["aʊ"]
+                    i = i + 1
 
-            else:
-                outstr = outstr + self.chart[instr[i]]
+                elif (instr[i] == "a") and (instr[i + 1] == "ɪ"):
+                    outstr = outstr + self.p_chart["aɪ"]
+                    i = i + 1
+
+                elif (instr[i] == "e") and (instr[i + 1] == "ɪ"):
+                    outstr = outstr + self.p_chart["eɪ"]
+                    i = i + 1
+
+                elif (instr[i] == "o") and (instr[i + 1] == "ʊ"):
+                    outstr = outstr + self.p_chart["oʊ"]
+                    i = i + 1
+
+                elif (instr[i] == "ɔ") and (instr[i + 1] == "ɪ"):
+                    outstr = outstr + self.p_chart["ɔɪ"]
+                    i = i + 1
+
+                else:
+                    outstr = outstr + self.p_chart[instr[i]]
 
             i = i + 1
 
@@ -104,7 +116,7 @@ class Translator:
     def hash_dec(
         self,
     ) -> None:  # completely unneeded, I just wanted to put the dict dec out of the way.
-        self.chart: dict = {
+        self.p_chart: dict = {
             # ipa - output rune
             "ɑ": "ᚪ",
             "æ": "ᚫ",
@@ -151,4 +163,41 @@ class Translator:
             ".": ".",
             "ˈ": "",
             "ˌ": "",
+            "'": "'",
+        }
+
+        self.e_chart: dict = {
+            "a": "ᚪ",
+            "b": "ᛒ",
+            "c": "ᚳ",
+            "d": "ᛞ",
+            "e": "ᛖ",
+            "f": "ᚠ",
+            "g": "ᚷ",
+            "h": "ᚻ",
+            "i": "ᛁ",
+            "j": "ᛡ",
+            "k": "ᛣ",
+            "l": "ᛚ",
+            "m": "ᛗ",
+            "n": "ᚾ",
+            "o": "ᚩ",
+            "p": "ᛈ",
+            "q": "ᛢ",
+            "r": "ᚱ",
+            "s": "ᛋ",
+            "t": "ᛏ",
+            "u": "ᚢ",
+            "v": "ᚠ",
+            "w": "ᚹ",
+            "x": "ᛉ",
+            "y": "ᚣ",
+            "z": "ᛋ",
+            "th": "ᚦ",
+            "ng": "ᛝ",
+            " ": " ",
+            "\n": "\n",
+            "*": "",
+            ",": ",",
+            "'": "'",
         }
