@@ -18,20 +18,19 @@
 
 <body>
     <p1>
-        <form method ="GET">
+        <form action="#" method="POST">
             <label for="input">Input Text</label><br />
             <textarea id="input" cols="50" name="input" rows="10"></textarea><br />
             <input type="submit" value="Translate" /><br /><br />
         </form>
     </p1>
     <p2>
-        <form method = "POST">
+        <form>
             <label for="output">Translted Text</label><br />
-            <textarea id="output" cols="50" name="output" rows="10"></textarea>
+            <textarea id="output" cols="50" name="output" placeholder={%trans.get_outstr()%} readonly
+                rows="10"></textarea>
         </form>
     </p2>
 </body>
 
 </html>
-
-
