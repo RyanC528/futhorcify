@@ -24,12 +24,11 @@
             <input type="submit" value="Translate" /><br /><br />
         </form>
     </p1>
+    <h1>
+        Translated Text
+    </h1><br />
     <p2>
-        <form>
-            <label for="output">Translted Text</label><br />
-            <textarea id="output" cols="50" name="output" placeholder={%trans.get_outstr()%} readonly
-                rows="10"></textarea>
-        </form>
+        {% translation%}
     </p2>
 </body>
 
