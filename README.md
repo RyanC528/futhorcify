@@ -1,4 +1,7 @@
 # FUTHORCify
+
+Leaving for a bit, did not make a back end that works well with flask
+
 Basic translator to turn written english to the futhorc script instead of latin due to random interst
 
 fighting with flask atm, so writting down some info before practisting more with flask.
