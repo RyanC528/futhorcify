@@ -4,12 +4,12 @@ from flask import Flask, render_template, request
 from flaskr.translator import Translator
 
 translation = ""
+trans = Translator()
 
 
 # source https://flask.palletsprojects.com/en/stable/tutorial/factory/
 def create_app(test_config=None):
     app = Flask(__name__, instance_relative_config=True)
-    trans = translator.Translator
     translation = trans.get_outstr()
     app.config.from_mapping(
         SECRET_KEY="dev",  # CHANGE LATTER
@@ -28,7 +28,7 @@ def create_app(test_config=None):
     @app.route("/", methods=["GET"])
     def base():
         translation = ""
-        if request.method == "POST":
+        if request.method == "GET":
             trans.set_instr(request.form["input"])
             translation = trans.get_outstr()
         return render_template("base.html", translation=translation)

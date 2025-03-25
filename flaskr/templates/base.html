@@ -18,7 +18,7 @@
 
 <body>
     <p1>
-        <form action="#" method="POST">
+        <form action="#" method="GET">
             <label for="input">Input Text</label><br />
             <textarea id="input" cols="50" name="input" rows="10"></textarea><br />
             <input type="submit" value="Translate" /><br /><br />
@@ -28,7 +28,9 @@
         Translated Text
     </h1><br />
     <p2>
-        {% translation %}
+        <textarea id="output" cols="50" name="output" rows="10" readonly>
+        {{ translation }}
+        </textarea>
     </p2>
 </body>
 
