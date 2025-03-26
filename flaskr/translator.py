@@ -4,7 +4,7 @@ import eng_to_ipa as p
 class Translator:
     def __init__(self):
         self.instr = "hold"
-        self.outstr = "hold"
+        self.outstr = "ᚻᚩᚣᛞ"
 
     def translate(self, instr: str) -> None:
         outstr: str = ""

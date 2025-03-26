@@ -3,7 +3,7 @@ import os
 from flask import Flask, render_template, request
 from flaskr.translator import Translator
 
-translation = ""
+translation = "ᚻᚩᚣᛞ"
 trans = Translator()
 
 
@@ -25,12 +25,13 @@ def create_app(test_config=None):
     except OSError:
         pass
 
-    @app.route("/", methods=["GET"])
+    @app.route("/", methods=["GET", "POST"])
     def base():
-        translation = ""
-        if request.method == "GET":
+        translation = "ᚻᚩᚣᛞ"
+        trans = Translator()
+        if request.method == "POST":
             trans.set_instr(request.form["input"])
             translation = trans.get_outstr()
-        return render_template("base.html", translation=translation)
+        return render_template("index.html", translation=translation)
 
     return app

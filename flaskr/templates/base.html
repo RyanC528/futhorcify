@@ -3,7 +3,7 @@
 <html>
 
 <head>
-    <title>FUTHORCIFY</title>
+    <title>{% block title %}{% endblock %}</title>
     <link href="style.css">
     <style>
 
@@ -16,22 +16,8 @@
     By Ryan Copeland<br />A product of internet rabbit holes and boredum
 </header>
 
-<body>
-    <p1>
-        <form action="#" method="GET">
-            <label for="input">Input Text</label><br />
-            <textarea id="input" cols="50" name="input" rows="10"></textarea><br />
-            <input type="submit" value="Translate" /><br /><br />
-        </form>
-    </p1>
-    <h1>
-        Translated Text
-    </h1><br />
-    <p2>
-        <textarea id="output" cols="50" name="output" rows="10" readonly>
-        {{ translation }}
-        </textarea>
-    </p2>
-</body>
+{% block content %}
+
+{% endblock %}
 
 </html>
