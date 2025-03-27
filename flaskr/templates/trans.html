@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %} Home Page {% endblock %}
+
+{% block content %}
+
+<p1>
+    <form action="#" method="POST">
+        <label for="input">Input Text</label><br />
+        <textarea id="input" cols="50" name="input" rows="10"></textarea><br />
+        <input type="submit" value="Translate" /><br /><br />
+    </form>
+</p1>
+<h1>
+    Translated Text
+</h1><br />
+<p2>
+    {{translation}}
+</p2>
+
+{% endblock %}
