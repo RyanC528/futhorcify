@@ -1,5 +1,68 @@
 {% extends "base.html" %}
 {% block title %}Explanation{% endblock %}
 {% block content %}
-<h1>Test</h1>
+
+<h1>OK so what is this?</h1>
+
+<p>
+    Futhoricfy is a random project built off a random idea from a youtube video.
+    The basic idea is to a somewhat phonetic alphabet using anglo-saxon runes.
+</p><br>
+
+<p>
+    OK, who, what, when, where and why. Well, why is because I am crazy. Who is me.
+    What are runes? Runes are the orginal writting system for germanic languages. Ie. English, German, Swedish etc.
+    It is possibly decended from an Italic script making it related to the Latin alphabet.
+    There are actually 4 runic alphabets, Elder Futhark, Younger Futhark, anglo-saxon Futhoric and Dalecarlian
+    Elder Futhark is the oldest version we have, used in modern day Denmark around 500 BC
+    Younger Futhar is directly decendend from Elder, and that was the actual alphabet the Norse used.
+    Most modern runes are based on Dalecarlian Runes, a version that for some reason survived into the 20th centry in
+    bum fuck nowhere Sweden
+    Futhoric was the version of runes used by the Anglo-Saxons for old English.
+</p><br>
+
+<p>
+    For this project, general american english is assumed. Because that is what I speak and what the libary uses
+    There are 30 letters in Futhoric, well in the version I used. The actual alphabet can very.
+    20 constants and 10 vowels. The direct translation for each letter is on key.
+    Runes can closer match english since general american has 44 soundes in broad transcription.
+    In practist the current alphabet has 23 letters with unique sounds.
+    Thankfully there is a database of general american english with phonetic spelling called CMU. So I stole it
+</p><br>
+
+<p>
+    Problem number 1, 30 is still less than 44. So how can it work. Well, lets break it down, starting with vowels.
+    General American has 15 vowels, yes 15. 5 times the amount of vowel symbols we have. Doubling the glyphs fixes most
+    things.
+    There are actually two kinds of vowels in english, monothongs (some times called pure vowels) and dipthongs.
+    Dipthongs are actually two vowel sounds squished together. Such as ow in cow, if you say it outloud you can feel
+    your lips move.
+    As such, there is a simple solution, assign only monothongs to letters. Dipthongs are represented by 2 letters.
+    From there, assigning sounds just follows a random flow. 1 if the vowel from old english still exists, just assign
+    it to the rune from old english.
+    Step 2, if there are runes that used to make a sound very similar to a modern english vowel, them the sound is
+    assigned to the rune.
+    Step 3, leftovers are random bullshit.
+    Slight problem, English is a bitch and fights you at all times. There just so happens to be two monothongs that only
+    exist in dipthonds
+    e and o in broad IPA only exist in a couple vowel sounds. Including in I. So I had to make a new rule. The Schwa and
+    ^ sounds, which don't appear in any dipthongs
+    replace e and o.
+</p><br>
+
+<p>
+    On the the constants, ironically once you pull out vowels and letters without sounds, both alphabets have the same
+    amount of constants.
+    In addition, most constants existed in runes, so a simple copy paste worked. Until you hit a wall. One of the good
+    things of runes is there
+    are letters for two common english sounds with sounds. These being Th with thorn and NG with ing. This means two
+    sounds are actually lost, v and z.
+    Which means that sounds like sh and ch still don't have letters. To fix this, I stole a feature of modern english
+    spelling, an h after constants can change pronuncation.
+    So the v sound is now represented with fh. I heard some fixes by writting feoh backwards, but unicode isn't playing
+    nice.
+    You might think z would break this since sh already exists, but there is one letter in futhorc without a sound, Calc
+    which likely existed to help translate latin. I gave the z sound to it.
+
+</p>
 {% endblock %}

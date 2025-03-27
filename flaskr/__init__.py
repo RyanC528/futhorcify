@@ -7,15 +7,22 @@ translation = "ᚻᚩᚣᛞ"
 trans = Translator()
 
 
-app = Flask(__name__)
+app = Flask(__name__, static_url_path="/static")
 
 
-@app.route("/home")
+@app.route("/")
+def base():  # there is an easier way but I can't get the right google terms
+    return redirect(url_for("home"))
+
+
+@app.route("/home", methods=["GET", "POST"])
 def home():
-    pass
+    if request.method == "POST":
+        return redirect(url_for(request.form["move"]))
+    return render_template("home.html")
 
 
-@app.route("/tranlator", methods=["GET", "POST"])
+@app.route("/translator", methods=["GET", "POST"])
 def translator():
     translation = "ᚻᚩᚣᛞ"
     trans = Translator()
@@ -28,12 +35,12 @@ def translator():
 
 @app.route("/explanation")
 def explanation():
-    pass
+    return render_template("expl.html")
 
 
 @app.route("/key")
 def key():
-    pass
+    return render_template("key.html")
 
 
 if __name__ == "__main__":
